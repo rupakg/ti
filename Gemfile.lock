@@ -12,7 +12,6 @@ GEM
     addressable (2.2.5)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
-    choice (0.1.4)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -79,7 +78,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.0.10)
-  choice
   coffee-script
   colored
   guard
@@ -91,3 +89,4 @@ DEPENDENCIES
   rake
   rcov
   rocco
+  thor

@@ -11,7 +11,7 @@ group :runtime do
   gem 'colored'
   gem 'rocco'
   gem 'rake'
-  gem 'choice' # TODO: Move to Thor
+  gem 'thor'
 end
 
 group :development do
