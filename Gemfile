@@ -19,3 +19,7 @@ group :development do
   gem "jeweler",  "~> 1.5.2"
   gem "rcov",     ">= 0"
 end
+
+group :test do
+  gem "rspec"
+end
