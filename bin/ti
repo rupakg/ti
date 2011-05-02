@@ -1,50 +1,34 @@
 #!/usr/bin/env ruby
 
 require File.expand_path(File.join(File.dirname(__FILE__), %w[ .. lib ti ]))
-require "choice"
+
+require 'thor'
 
 PROGRAM_VERSION = "0.1.1"
 
-Choice.options do
-  header ''
-  header 'Specific options:'
+module Ti
+  class CLI < Thor
 
-  option :name do
-    short '-n'
-    long '--name=demo'
-    desc 'Titanium Project Name'
-    default 'HelloWorld'
+    # info
+    map %w(--version -v) => 'info'
+    desc "info", "information about the Titanium CLI"
+    def info
+      say "version: #{PROGRAM_VERSION}"
+    end
+
+    # new
+    desc "new <name> <id> <platform>", "generates a new Titanium project."
+    long_desc "Generates a new Titanium project. See 'ti help project:new for more information.
+              \n\nExamples:
+              \n\nti new   ==> Creates a project with defaults, name as 'HelloWorld', id as 'org.company.demo' and platform as 'iphone'.
+              \n\nti new 'Demo', 'com.mycompany.demo'  ==> Creates a project with name and id as specified, and defaults to platform 'iphone'.
+              \n\nti new 'Demo', 'com.mycompany.demo', ipad  ==> Creates a project with name, id and platform as specified."
+    def new(name='HelloWorld', id='org.company.demo', platform='iphone')
+      # Generate the Ti application
+      Ti::Generate.new_project(name, id, platform)
+    end
+
   end
-
-  option :id do
-    short '-i'
-    long '--id=com.codewranglers.demo'
-    desc 'Your Project id'
-    default 'org.company.demo'
-  end
-
-  option :platform do
-    short '-p'
-    long '--platform=iphone'
-    desc 'Project Platform where you want to run your application'
-    default 'iphone'
-  end
-
-  separator ''
-  separator 'Common options:'
-
-  option :help do
-    long '--help'
-    desc 'Show this message'
-  end
-
-  option :version do
-    short '-v'
-    long '--version'
-    desc 'Show version'
-  end
-
 end
 
-# Main entry point for the application
-Ti::Generate.new_project(Choice.choices[:name], Choice.choices[:id], Choice.choices[:platform])
+Ti::CLI.start
