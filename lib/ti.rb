@@ -78,7 +78,7 @@ module Ti
         if destroy
           FileUtils.rm_rf TI_TEMP
         else
-          FileUtils.mkdir TI_TEMP
+          FileUtils.mkdir TI_TEMP unless FileTest.exists?(TI_TEMP)
         end
       end
 
