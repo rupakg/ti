@@ -4,7 +4,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), %w[ .. lib ti ]))
 
 require 'thor'
 
-PROGRAM_VERSION = "0.1.1"
+PROGRAM_VERSION = "0.2.0"
 
 module Ti
   class CLI < Thor
@@ -31,4 +31,5 @@ module Ti
   end
 end
 
+# thor entry point
 Ti::CLI.start
