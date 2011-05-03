@@ -109,7 +109,7 @@ module Ti
 
 
       def location
-        @location ||= Pathname.new(Dir.pwd).join(@project_name)
+        @location = Pathname.new(Dir.pwd).join(@project_name)
       end
 
 
