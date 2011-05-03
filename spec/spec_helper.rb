@@ -22,5 +22,11 @@ RSpec.configure do |config|
     return result, exit_status
   end
 
+  def remove_directories(*names)
+    project_dir = Pathname.new(Dir.pwd)
+    names.each do |name|
+      FileUtils.rm_rf(project_dir.join(name)) if FileTest.exists?(project_dir.join(name))
+    end
+  end
 end
 
