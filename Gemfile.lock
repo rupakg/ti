@@ -89,5 +89,5 @@ DEPENDENCIES
   rake
   rcov
   rocco
-  rspec
+  rspec (~> 2.5.0)
   thor

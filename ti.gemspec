@@ -47,6 +47,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.6.1}
   s.summary = %q{Ti}
   s.test_files = [
+    "spec/cli/commands_spec.rb",
+    "spec/spec_helper.rb",
     "test/helper.rb",
     "test/test_ti.rb"
   ]
@@ -68,6 +70,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.10"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, ["~> 2.5.0"])
     else
       s.add_dependency(%q<guard-sass>, [">= 0"])
       s.add_dependency(%q<guard>, [">= 0"])
@@ -82,6 +85,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bundler>, ["~> 1.0.10"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rspec>, ["~> 2.5.0"])
     end
   else
     s.add_dependency(%q<guard-sass>, [">= 0"])
@@ -97,6 +101,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.10"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rspec>, ["~> 2.5.0"])
   end
 end
 
