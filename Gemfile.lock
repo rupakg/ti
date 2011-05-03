@@ -36,6 +36,8 @@ GEM
       em-websocket (~> 0.2.0)
       guard (>= 0.2.2)
       json (~> 1.5.1)
+    guard-rspec (0.3.0)
+      guard (>= 0.2.2)
     jasmine (1.0.2.0)
       json_pure (>= 1.4.3)
       rack (>= 1.1)
@@ -83,6 +85,7 @@ DEPENDENCIES
   guard
   guard-coffeescript
   guard-livereload
+  guard-rspec
   guard-sass!
   jasmine
   jeweler (~> 1.5.2)

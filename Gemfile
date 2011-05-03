@@ -6,6 +6,7 @@ group :runtime do
   gem 'guard'
   gem 'guard-coffeescript'
   gem 'guard-livereload'
+  gem 'guard-rspec'
   gem 'jasmine'
   gem 'coffee-script'
   gem 'colored'
