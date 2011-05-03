@@ -7,6 +7,13 @@ PROGRAM_VERSION = "0.2.0"
 module Ti
   class CLI < Thor
 
+    STATUS_TYPES = { :success          => 0,
+                     :general_error    => 1,
+                     :not_supported    => 3,
+                     :not_found        => 4,
+                     :incorrect_usage  => 64,
+                   }
+
     # info
     map %w(--version -v) => 'info'
     desc "info", "information about the Titanium CLI"
