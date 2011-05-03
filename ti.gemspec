@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
+    "Guardfile",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -30,6 +31,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "bin/ti",
     "bin/ti.old",
+    "lib/cli.rb",
     "lib/ti.rb",
     "lib/ti/config",
     "lib/ti/gitignore",
@@ -37,6 +39,8 @@ Gem::Specification.new do |s|
     "lib/ti/rakefile",
     "lib/ti/readme",
     "lib/ti/templates/app.coffee",
+    "spec/cli/commands_spec.rb",
+    "spec/spec_helper.rb",
     "test/helper.rb",
     "test/test_ti.rb",
     "ti.gemspec"
@@ -61,6 +65,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<guard>, [">= 0"])
       s.add_runtime_dependency(%q<guard-coffeescript>, [">= 0"])
       s.add_runtime_dependency(%q<guard-livereload>, [">= 0"])
+      s.add_runtime_dependency(%q<guard-rspec>, [">= 0"])
       s.add_runtime_dependency(%q<jasmine>, [">= 0"])
       s.add_runtime_dependency(%q<coffee-script>, [">= 0"])
       s.add_runtime_dependency(%q<colored>, [">= 0"])
@@ -76,6 +81,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<guard>, [">= 0"])
       s.add_dependency(%q<guard-coffeescript>, [">= 0"])
       s.add_dependency(%q<guard-livereload>, [">= 0"])
+      s.add_dependency(%q<guard-rspec>, [">= 0"])
       s.add_dependency(%q<jasmine>, [">= 0"])
       s.add_dependency(%q<coffee-script>, [">= 0"])
       s.add_dependency(%q<colored>, [">= 0"])
@@ -92,6 +98,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<guard>, [">= 0"])
     s.add_dependency(%q<guard-coffeescript>, [">= 0"])
     s.add_dependency(%q<guard-livereload>, [">= 0"])
+    s.add_dependency(%q<guard-rspec>, [">= 0"])
     s.add_dependency(%q<jasmine>, [">= 0"])
     s.add_dependency(%q<coffee-script>, [">= 0"])
     s.add_dependency(%q<colored>, [">= 0"])
