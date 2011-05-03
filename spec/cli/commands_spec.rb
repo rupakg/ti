@@ -8,12 +8,6 @@ describe "Ti Generator Commands" do
         status.should eql(Ti::CLI::STATUS_TYPES[:success])
       end
     end
-    context "ti help new" do
-      it "should display help for the task 'new'" do
-        response, status = capture_with_status(:stdout){ Ti::CLI.start(['help', 'new']) }
-        status.should eql(Ti::CLI::STATUS_TYPES[:success])
-      end
-    end
     context "ti help invalid_task" do
       it "should display appropriate error message" do
         response, status = capture_with_status(:stderr){ Ti::CLI.start(['help', 'blah']) }
@@ -46,6 +40,12 @@ describe "Ti Generator Commands" do
     end
   end
   context "New command: " do
+    context "Help (ti help new)" do
+      it "should display help for the task 'new'" do
+        response, status = capture_with_status(:stdout){ Ti::CLI.start(['help', 'new']) }
+        status.should eql(Ti::CLI::STATUS_TYPES[:success])
+      end
+    end
     context "Generate a new project: " do
       context "with defaults (ti new)" do
         it "should generate new project \"HelloWorld\"" do
