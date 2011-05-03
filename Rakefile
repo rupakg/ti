@@ -24,7 +24,6 @@ Jeweler::Tasks.new do |gem|
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -42,8 +41,6 @@ Rcov::RcovTask.new do |test|
   test.verbose = true
 end
 
-task :default => :test
-
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
@@ -52,4 +49,28 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "ti #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
+end
+
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+task :default => :spec
+
+desc "Run specs"
+RSpec::Core::RakeTask.new do |t|
+  t.rspec_opts = '--color'
+end
+
+namespace :spec do
+
+  desc "Run specs verbosely"
+  RSpec::Core::RakeTask.new('verbose') do |t|
+    t.rspec_opts = '--color --format documentation'
+  end
+
+  desc "Run specs with html report"
+  RSpec::Core::RakeTask.new('html') do |t|
+    t.rspec_opts = '--color --format html'
+  end
+
 end
